@@ -1,0 +1,89 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "MS Notifications",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://2a08-2601-14a-700-2a60-a414-c76d-240b-cc2a.ngrok.io",
+      "description": "Your bot framework server"
+    }
+  ],
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "paths": {
+    "/api/notifyAll": {
+      "post": {
+        "summary": "NotifyAll",
+        "description": "Sends a notification to all users",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/notifyAllParams"
+              },
+              "example": {
+                "text": "This is the notification message"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notifyAllResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "notifyAllParams": {
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "example": "This is the notification message"
+          }
+        }
+      },
+      "notifyAllResponse": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/notifyAllResponseObject"
+          }
+        }
+      },
+      "notifyAllResponseObject": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  }
+}
