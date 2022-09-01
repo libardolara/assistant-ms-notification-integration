@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "https://2a08-2601-14a-700-2a60-a414-c76d-240b-cc2a.ngrok.io",
+      "url": "<YOUR-NOTIFICATION-BASE-URL>",
       "description": "Your bot framework server"
     }
   ],
