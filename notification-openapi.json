@@ -39,7 +39,39 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/notifyAllResponse"
+                  "$ref": "#/components/schemas/notifyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/notify": {
+      "post": {
+        "summary": "Notify a user",
+        "description": "Sends a notification to a user",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/notifyParams"
+              },
+              "example": {
+                "userID": "9fa230ec-7999-4519-9463-eb3d18664a43",
+                "text": "This is the notification message"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notifyResponse"
                 }
               }
             }
@@ -62,15 +94,29 @@
           }
         }
       },
-      "notifyAllResponse": {
+      "notifyParams" : {
         "type": "object",
-        "properties": {
-          "response": {
-            "$ref": "#/components/schemas/notifyAllResponseObject"
+        "required": ["userID", "text"],
+        "properties" : {
+          "userID" : {
+            "type" : "string",
+            "example" : "9fa230ec-7999-4519-9463-eb3d18664a43"
+          },
+          "text" : {
+            "type" : "string",
+            "example" : "This is the notification message"
           }
         }
       },
-      "notifyAllResponseObject": {
+      "notifyResponse": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "$ref": "#/components/schemas/notifyResponseObject"
+          }
+        }
+      },
+      "notifyResponseObject": {
         "type": "object",
         "properties": {
           "message": {
