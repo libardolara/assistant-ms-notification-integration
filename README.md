@@ -17,7 +17,7 @@ This bot has been created using [Bot Framework](https://dev.botframework.com) v4
 1) Clone the repository
 
     ```bash
-    git clone https://github.com/libardolara/assistant-ms-chat-integration.git
+    git clone https://github.com/libardolara/assistant-ms-notification-integration.git
     ```
 
 1) Install modules
@@ -25,7 +25,7 @@ This bot has been created using [Bot Framework](https://dev.botframework.com) v4
     ```bash
     npm install
     ```
-1) Copy or rename the .env_example file to .env (nothing before the dot) and add your Watson Assistant details, CosmosDb variables and Microsoft Bot app keys.
+1) Copy or rename the `.env_example` file to `.env` (nothing before the dot) and add your CosmosDb variables.
 
 ```
 # Environment variables
@@ -39,13 +39,15 @@ CosmosDbDatabaseId="botdocs"
 CosmosDbContainerId="bot-storage"
 ```
 
-### To try this sample locally using Bot Framework Emmulator
-
 1) Install [ngrok](https://ngrok.com/) and run - point to port 3978
+    - You will need to sign in to [setup](https://dashboard.ngrok.com/get-started/setup).
 
     ```bash
     ngrok http --host-header=rewrite 3978
     ```
+
+
+### To try this sample locally using Bot Framework Emmulator
 
 1) Install and run [Bot Framework Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0&tabs=csharp)
 
@@ -58,9 +60,11 @@ CosmosDbContainerId="bot-storage"
 1) Open a new bot on [Bot Framework Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0&tabs=csharp)
     - Use the current `https` URL you were given by running ngrok. Append with the path `/api/messages` used by this project
 
-1) Update the `notification-openapi.json` file changing the `<YOUR-NOTIFICATION-BASE-URL>` place holder with the the `https` URL you were given by running ngrok
+1) Update the `notification-openapi.json` file changing the `<YOUR-NOTIFICATION-BASE-URL>` place holder with the `https` URL you were given by running ngrok
 
 1) Create a [custom extension](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-add-custom-extension) on your assistant. Use the `notification-openapi.json` file
+    - Select the basic authentication. (Eventhough it is not enforced in this project)
+    - Use any user and password for the basic authentication setup.
 
 1) Set up your action to use the custom extension endpoint `NotifyAll`.
 
@@ -98,9 +102,19 @@ CosmosDbContainerId="bot-storage"
     npm start
     ```
 
+1) Update the `notification-openapi.json` file changing the `<YOUR-NOTIFICATION-BASE-URL>` place holder with the `https` URL you were given by running ngrok
+
+1) Create a [custom extension](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-add-custom-extension) on your assistant. Use the `notification-openapi.json` file
+    - Select the basic authentication. (Eventhough it is not enforced in this project)
+    - Use any user and password for the basic authentication setup.
+
+1) Set up your action to use the custom extension endpoint `NotifyAll`.
+
+1) Preview your assistant to use the custom extension.
+
 ## Interacting with the bot in Teams
 
-Message the bot and Watson Assistant will respond.
+Watson Assistant will send a notification message (or proactive message) to one or all users with the bot installed.
 
 ## Deploy the bot to IBM Cloud
 
@@ -111,5 +125,7 @@ Message the bot and Watson Assistant will respond.
 - [How Microsoft Teams bots work](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics-teams?view=azure-bot-service-4.0&tabs=javascript)
 - [Test and debug your bot locally](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/how-to/debug/locally-with-an-ide)
 - [Test and debug with the Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0&preserve-view=true&tabs=javascript)
-
+- [Notification bot Vs Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors)
+- [Proactive Messages](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/send-proactive-messages?tabs=typescript#create-the-conversation)
+- [Build notification bot](https://docs.microsoft.com/en-us/microsoftteams/platform/sbs-gs-notificationbot?tabs=vscode)
 
