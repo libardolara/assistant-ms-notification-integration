@@ -1,8 +1,8 @@
-## Watson Assistant - MS Integration
+## Watson Assistant - Microsoft Notifications Integration
 
 > Based on Bot Framework [proactive messages](https://github.com/microsoft/BotBuilder-Samples/tree/75523374357b397433882d35b1b0a305bbc5658d/samples/javascript_nodejs/16.proactive-messages) bot sample.
 
-This bot has been created using [Bot Framework](https://dev.botframework.com) v4, it shows how to create a simple bot that sends notifications to users, these notifications will be triggered from [Watson Assistant's](https://cloud.ibm.com/catalog/services/watson-assistant) custom extensions.
+This bot has been created using [Bot Framework](https://dev.botframework.com) v4, it shows how to create a simple bot that sends notifications to users, these notifications will be triggered from [Watson Assistant's](https://cloud.ibm.com/catalog/services/watson-assistant) custom extensions. These notifications can be sent to Microsoft Teams, Skype, Cortana and other services managed by Bot Framework.
 
 ## Prerequisites
 
@@ -122,10 +122,9 @@ Watson Assistant will send a notification message (or proactive message) to one 
 
 ## Further reading
 
-- [How Microsoft Teams bots work](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics-teams?view=azure-bot-service-4.0&tabs=javascript)
-- [Test and debug your bot locally](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/how-to/debug/locally-with-an-ide)
-- [Test and debug with the Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0&preserve-view=true&tabs=javascript)
 - [Notification bot Vs Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors)
 - [Proactive Messages](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/send-proactive-messages?tabs=typescript#create-the-conversation)
 - [Build notification bot](https://docs.microsoft.com/en-us/microsoftteams/platform/sbs-gs-notificationbot?tabs=vscode)
-
+- [How Microsoft Teams bots work](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics-teams?view=azure-bot-service-4.0&tabs=javascript)
+- [Test and debug your bot locally](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/how-to/debug/locally-with-an-ide)
+- [Test and debug with the Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-4.0&preserve-view=true&tabs=javascript)
