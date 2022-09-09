@@ -117,7 +117,7 @@ Watson Assistant will send a notification message (or proactive message) to one 
 
 ## Deploy the bot to IBM Cloud
 
-> TODO
+Learn how to deploy this application on [IBM Cloud Code Engine](CODE.md)
 
 ## Further reading
 
