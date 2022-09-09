@@ -65,13 +65,12 @@ CosmosDbContainerId="bot-storage"
 1) Create a [custom extension](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-add-custom-extension) on your assistant. Use the `notification-openapi.json` file
     - Select the basic authentication. (Eventhough it is not enforced in this project)
     - Use any user and password for the basic authentication setup.
-
+    ![customextension](img/custom-extension.png)
 1) Set up your action to use the custom extension endpoint `NotifyAll`.
+    ![action](img/extension-setup.png)
 
 1) Preview your assistant to use the custom extension.
-
-![customextension](img/bot-emulator.png)
-
+    ![previewbot](img/bot-emulator.png)
 
 ### To try this sample locally using MS Teams
 
